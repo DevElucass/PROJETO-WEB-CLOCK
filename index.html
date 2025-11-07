@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Relógio (Analógico + Digital) — HTML/CSS/JS</title>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card clock-card">
+      <div style="display:flex;align-items:center;gap:12px;width:100%;justify-content:space-between">
+        <strong>Relógio Analógico</strong>
+        <span class="small">JS + CSS</span>
+      </div>
+
+      <div class="clock-outer" id="analog">
+        <div class="dial" aria-hidden="true">
+          <div class="marks" id="marks"></div>
+          <div class="hand hour" id="hour"></div>
+          <div class="hand min" id="minute"></div>
+          <div class="hand sec" id="second"></div>
+          <div class="center-dot"></div>
+        </div>
+      </div>
+
+      <footer>Pressione o botão abaixo para alternar entre 12h/24h no digital</footer>
+    </div>
+
+    <div class="card controls">
+      <div class="digital" role="region" aria-label="Relógio Digital">
+        <div class="time" id="digital">--:--:--</div>
+        <div class="date" id="date">Carregando data...</div>
+      </div>
+
+      <div style="display:flex;gap:8px;align-items:center;justify-content:space-between">
+        <div class="row">
+          <label for="tz">Fuso horário</label>
+          <select id="tz" title="Escolha um fuso horário">
+            </select>
+        </div>
+
+        <div class="row">
+          <label for="format">24h</label>
+          <input type="checkbox" id="format" checked />
+        </div>
+      </div>
+
+      <div style="display:flex;gap:8px;align-items:center;justify-content:space-between">
+        <div class="row">
+          <label class="small">Tema</label>
+          <button id="themeBtn">Alternar Tema</button>
+        </div>
+
+        <div class="row">
+          <label class="small">Mostrar segundos</label>
+          <input type="checkbox" id="showSec" checked />
+        </div>
+      </div>
+
+      <div style="margin-top:6px;color:var(--muted);font-size:13px">Dica: escolha um fuso diferente para ver a hora mudar.</div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
